@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cafemore::카페모아bb</title>
+    <style>
+      /* 왼쪽 */
+      #content {
+      width: 500px;
+      padding: 5px;
+      margin-left: 50px;
+      margin-top: 150px;
+      margin-bottom: 20px;
+      height: 500px;
+      float: left;
+      }
+      /* 오른쪽 */
+      #sidebar {
+      width: 700px;
+      height: 300px;
+      padding: 5px;
+      margin-bottom: 30px;
+      margin-right: 100px;
+      float: right;
+      border: 1px solid #bcbcbc;
+      }
+      #sidebar1 {
+      width: 700px;
+      height: 300px;
+      padding: 5px;
+      margin-bottom: 30px;
+      margin-right: 100px;
+      float: right;
+      }
+      #profile{
+          width: 150px;
+          height: auto;
+          display: block; 
+          margin: 0px auto; 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container";>
+      <div id="header">
+        <!--로고 이미지 -->
+        <a href="/main"><img id="logo_image" src="img/logo.png"></a>
+      </div>
+      <div id="content">
+        <img id="profile" src="img/profile.png">
+        <br><p style = "font-size: 24px"; align = center >이름</p>
+      </div>
+      <div id="sidebar1">
+          <br>
+        <h2>정보수정</h2>
+      </div>
+      <div id="sidebar1">
+          <br>
+        <h2>뱃지</h2>
+      </div>
+      <div id="sidebar1">
+        <br>
+      <a href="/main"><input type="button" name="infobtn" value="확인" ></a>
+    </div>
+      
+    </div>
+  </body>
+</html>

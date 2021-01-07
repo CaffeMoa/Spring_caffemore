@@ -1,0 +1,81 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cafemore::카페모아bb</title>
+    <style>
+
+      div{
+        width: 100%;
+      }
+
+      div.left{
+        width: 30%;
+        float: left;
+        /* border: 1px solid #bcbcbc; */
+      }
+
+      div.right{
+        width: 70%;
+        float: right;
+        /* border: 1px solid #bcbcbc; */
+      }
+
+      /* 왼쪽-가게 메인 사진, 별 */
+      #content {
+      text-align: center;
+      padding: 5px;
+      margin-top: 200px;
+      }
+
+      /* 오른쪽 */
+      #sidebar {
+      width: 800px;
+      height: 300px;
+      padding: 10px;
+      margin-top: 20px;
+      border: 1px solid #bcbcbc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <!--로고 이미지 -->
+        <a href="/main"><img id="logo_image" src="img/logo.png"></a>
+      </div>
+      <br>
+      <!-- 여기에 카페 이름, 별점 등등 -->
+      <div class="left">
+        <div id="content">
+          <img id="caffe_image" src="img/hollys.JPG" style="max-width: 60%; height: auto">
+          <br><br>
+          <!-- 별점 -->
+          <div id="star">
+            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
+            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
+            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
+            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
+            <img src="img/star.png" style="max-width: 8%; height: auto;"> 
+          </div>
+            <h2>충무로 할리스</h2>
+        </div>
+      </div>
+
+      <div class="right">
+        <div id="sidebar">
+          <h2>사진</h2>
+        </div>
+        <div id="sidebar">
+          <h2>인스타그램</h2>
+        </div>
+        <div id="sidebar">
+          <h2>후기</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

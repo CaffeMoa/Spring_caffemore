@@ -1,0 +1,144 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Cafemore</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        div.container{
+            width: 100%;
+        }
+        .left{
+            width: 55%;
+            float: left;
+        }
+        .right{
+            width: 40%;
+            float: right;
+            margin-right: 15px;
+            margin-bottom: 30px;
+        }
+        /* top 10 */
+        #sidebar {
+            /* width: 500px; */
+            height: 750px;
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #bcbcbc;
+        }
+        @media(max-width:1000px){
+            div.left{
+                width: 95%;
+                float: none;
+                position: relative;
+                margin: 10px;
+            }
+            div.right{
+                float: none;
+                width: 90%;
+                position: relative;
+                left: 20px;
+            }
+        }
+        ul{
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <!--로고 이미지 -->
+    <a href="/main"><img id="logo_image" src="img/logo.png"></a>
+    <!--카페 검색 -->
+    <a href="/search"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
+                               onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
+    <!--회원가입-->
+    <a href="/login" style="position: absolute; right: 80px; top: 30px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+                                                                                  onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+    <!--프로필-->
+    <a href="/profile"><img id="profile_image" src="img/profile.png"
+                                width=40px; style="position: absolute; right: 20px; top: 20px; "></a>
+</div>
+<br>
+<div class="container">
+    <div class="left">
+        <div id = "select">
+            <select id ="sl"style="position: left">
+                <option>강남구</option>
+                <option>강동구</option>
+                <option>강북구</option>
+                <option>강서구</option>
+                <option>관악구</option>
+                <option>광진구</option>
+                <option>구로구</option>
+                <option>금천구</option>
+                <option>노원구</option>
+                <option>도봉구</option>
+                <option>동대문구</option>
+                <option>동작구</option>
+                <option>마포구</option>
+                <option>서대문구</option>
+                <option>서초구</option>
+                <option>성동구</option>
+                <option>성북구</option>
+                <option>송파구</option>
+                <option>양천구</option>
+                <option>영등포구</option>
+                <option>용산구</option>
+                <option>은평구</option>
+                <option>종로구</option>
+                <option>중구</option>
+                <option>중랑구</option>
+            </select>
+        </div>
+        <br>
+        <div class="map_wrap">
+            <div id="map" style="width:100%;height:650px;position:relative;overflow:hidden;"></div>
+            <ul id="category">
+                <li id="CE7" data-order="4">
+                    <span class="category_bg cafe"></span>
+                </li>
+            </ul>
+        </div>
+        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=7baca3bb9b78c8e4f475fe79b3d9215b&libraries=services"></script>
+        <script type="text/javascript" src="/js/map.js"></script>
+        <div id ="footer">
+            <h3>TOP5</h3>
+            <a href="/info"><img  src="img/hollys.JPG"  width=120px;></a>
+            <a href="/info"><img  src="img/starbucks.jpg"  width=120px;></a>
+            <a href="/info"><img  src="img/hollys.JPG"  width=120px;></a>
+            <a href="/info"><img  src="img/starbucks.jpg"  width=120px;></a>
+            <a href="/info"><img  src="img/hollys.JPG"  width=120px;></a>
+        </div>
+    </div>
+    <div class="right">
+        <div id = "search">
+            <input id="ip" type="text" placeholder="찾고싶은 카페의 태그를 입력해주세요">
+            <button id ="sb"><img id="search_image" src="img/search.png"  width=80%;></button>
+        </div>
+        <br>
+        <div id="sidebar" style="overflow: scroll;">
+            <div id="top_10">
+                <h3>TOP10</h3>
+                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
+                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
+                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
+                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
+            </div>
+            <div id="top_review">
+                <h3>리뷰수</h3>
+                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
+                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
+            </div>
+            <div id="top_tag">
+                <h3>#태그</h3>
+                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
+                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

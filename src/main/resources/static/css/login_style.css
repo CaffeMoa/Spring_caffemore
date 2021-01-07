@@ -1,0 +1,90 @@
+:root{
+	--body-background-color: #f5f6f7;
+	--font-color: #4e4e4e;
+	--border-gray-color : #dadada;
+	--cafemore-color: #32B8FF;
+	--cafemore-border-color: #00A5FF;
+}
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+    background:var(--body-background-color);
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+#header {
+    background-color: white;
+    margin : 0px;
+    text-align: left;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    box-shadow: 0 2px 6px -2px rgba(214, 214, 214);
+    }
+.main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top: 21px;
+}
+.login-input-section-wrap{
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-input-wrap{
+	width: 465px;
+	height :48px;
+	border: solid 1px var(	--border-gray-color );
+	background: white;
+}
+.password-wrap{
+	margin-top: 13px;
+}
+.login-input-wrap input{
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+.login-button-wrap {
+	padding-top: 13px;
+}
+.login-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: var(--cafemore-color);
+	color: white;
+	border: solid 1px var(--cafemore-border-color);
+}
+.Easy-sgin-in-wrap{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+}
+.Easy-sgin-in-wrap h2{
+	font-size: 15px;
+}
+.Easy-sgin-in-wrap .sign-button-list
+{
+	padding-top:25px;
+	list-style: none;
+	width: 465px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.Easy-sgin-in-wrap.sign-button-list li button{
+    border:rgb(223, 223, 223);
+}

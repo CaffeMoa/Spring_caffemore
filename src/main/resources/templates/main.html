@@ -1,0 +1,51 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Cafemore</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/clean-blog.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="container";>
+    <div id="header">
+        <!--로고 이미지 -->
+        <a href="/main"><img id="logo_image" src="img/logo.png"></a>
+        <!--카페 검색 -->
+        <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
+                                                                                      onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
+        <!--회원가입-->
+        <a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+                                                                                      onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+        <!--프로필-->
+        <a href="/profile"><img id="profile_image" src="img/profile.png"
+                                    width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
+    </div>
+    <!-- Page Header -->
+    <!-- <header class="masthead" style="background-image: url('img/home-bg.jpg')"> -->
+    <header class="masthead">
+        <!-- 배경화면 색 바꾸고 싶으면 clean-blog.min.css 가서 바꾸면 됨...  -->
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>내 눈물 모아~</h1>
+                        <span class="subheading">caffe more & more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+</body>
+</html>
