@@ -16,6 +16,9 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(map);
 
+// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
 // 지도에 idle 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'idle', searchPlaces);
 
@@ -100,7 +103,7 @@ function displayPlaces(places) {
 
         // 마커를 생성하고 지도에 표시합니다
         var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
-            marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order);
+            marker = addMarker(placePosition, order);
             itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
 
         bounds.extend(placePosition);
@@ -112,6 +115,20 @@ function displayPlaces(places) {
                 displayPlaceInfo(place);
             });
         })(marker, places[i]);
+
+        // 마커와 검색결과 항목에 mouseover 했을때
+        // 해당 장소에 인포윈도우에 장소명을 표시합니다
+        // mouseout 했을 때는 인포윈도우를 닫습니다
+        (function(marker, title) {
+
+            itemEl.onmouseover =  function () {
+                displayInfowindow(marker, title);
+            };
+
+            itemEl.onmouseout =  function () {
+                infowindow.close();
+            };
+        })(marker, places[i].place_name);
 
         fragment.appendChild(itemEl);
     }
