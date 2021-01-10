@@ -17,4 +17,4 @@ https://velog.io/@ruddms936/github-토큰-생성
 
 ### 업데이트 됨! 
 
-<img src="https://user-images.githubusercontent.com/66946182/104029976-031a3100-520e-11eb-9ef3-32af2104717c.png">
+<img src="https://user-images.githubusercontent.com/66946182/104126017-99309180-539d-11eb-8048-7dc901da5f12.png">
