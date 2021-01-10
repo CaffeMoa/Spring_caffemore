@@ -1,70 +1,77 @@
 <!doctype html>
+<style>
+    .left{
+        width: 70%;
+        float: left;
+    }
+    .right{
+        width:25%;
+        float: right;
+        margin-bottom: 30px;
+    }
+    /* top 10 */
+    #sidebar {
+        /* width: 500px; */
+        height: 750px;
+        padding: 5px;
+        margin-bottom: 5px;
+        border: 1px solid #bcbcbc;
+    }
+    @media(max-width:1000px){
+        div.left{
+            width: 100%;
+            float: left;
+            position: relative;
+            margin-right: 100px;;
+        }
+        div.right{
+            float: right;
+            width: 100%;
+            position: relative;
+            margin-left: 100px;;
+        }
+    }
+    ul{
+        list-style:none;
+    }
+</style>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="ko">
 <head>
     <meta charset="utf-8">
     <title>Cafemore</title>
     <link rel="stylesheet" href="/css/style.css">
-    <style>
-        div.container{
-            width: 100%;
-        }
-        .left{
-            width: 65%;
-            float: left;
-        }
-        .right{
-            width: 30%;
-            float: right;
-            margin-right: 15px;
-            margin-bottom: 30px;
-        }
-        /* top 10 */
-        #sidebar {
-            /* width: 500px; */
-            height: 750px;
-            padding: 5px;
-            margin-bottom: 5px;
-            border: 1px solid #bcbcbc;
-        }
-        @media(max-width:1000px){
-            div.left{
-                width: 95%;
-                float: none;
-                position: relative;
-                margin: 10px;
-            }
-            div.right{
-                float: none;
-                width: 90%;
-                position: relative;
-                left: 20px;
-            }
-        }
-        ul{
-            list-style:none;
-        }
-    </style>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+<!--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">-->
+<!--    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+<!--    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>-->
+
+    <!-- Custom styles for this template -->
+    <link href="/css/clean-blog.min.css" rel="stylesheet">
 </head>
 <body>
-<div id="header">
-    <!--로고 이미지 -->
-    <a href="/"><img id="logo_image" src="img/logo.png"></a>
-    <!--카페 검색 -->
-    <a href="/search"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
-                               onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
-    <!--회원가입-->
-    <a href="/login" style="position: absolute; right: 80px; top: 30px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
-                                                                                  onmouseout="this.src='img/loginfont.png'" width=130px;></a>
-    <!--프로필-->
-    <a href="/profile"><img id="profile_image" src="img/profile.png"
-                                width=40px; style="position: absolute; right: 20px; top: 20px; "></a>
-</div>
-<br>
-<div class="container">
-    <div class="left">
+    <div id="header">
+        <!--로고 이미지 -->
+        <a href="/"><img id="logo_image" src="img/logo.png"></a>
+        <!--카페 검색 -->
+        <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
+                                                                                      onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
+        <!--회원가입-->
+        <a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+                                                                                      onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+        <!--프로필-->
+        <a href="/profile"><img id="profile_image" src="img/profile.png"
+                                    width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
+    </div>
+    <br>
+    <div class="left" style="margin-left: 20px; float : left;padding: 0px;">
         <div id = "select">
-            <select id ="sl"style="position: left">
+<!--            <select style="font-family: arial;font-size: 0.7em;" id ="sl"style="position: left"> 이거 하면 왜 에러나지 -->
+            <select id ="sl">
                 <option>강남구</option>
                 <option>강동구</option>
                 <option>강북구</option>
@@ -108,41 +115,51 @@
         <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=7baca3bb9b78c8e4f475fe79b3d9215b&libraries=services"></script>
         <script type="text/javascript" src="/js/map.js"></script>
         <div id ="footer">
-            <h3>TOP5</h3>
+            <br>
+            <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1em;font-weight: 700;">TOP5</p>
             <a href="/info"><img  src="img/hollys.JPG"  width=120px;></a>
             <a href="/info"><img  src="img/starbucks.jpg"  width=120px;></a>
             <a href="/info"><img  src="img/hollys.JPG"  width=120px;></a>
             <a href="/info"><img  src="img/starbucks.jpg"  width=120px;></a>
-            <a href="/info"><img  src="img/hollys.JPG"  width=120px;></a>
+            <a href="/info"><img  src="img/starbucks.jpg"  width=120px;></a>
         </div>
     </div>
-    <div class="right">
+    <div class="right"style="margin-right: 20px; float:right;" >
         <div id = "search">
-            <input id="ip" type="text" placeholder="찾고싶은 카페의 태그를 입력해주세요">
+            <input style="height:37px;font-family: arial;font-size: 0.7em;" id="ip" type="text" placeholder="찾고싶은 카페의 태그를 입력해주세요">
             <button id ="sb"><img id="search_image" src="img/search.png"  width=80%;></button>
         </div>
         <br>
         <div id="sidebar" style="overflow: scroll;">
-            <div id="top_10">
-                <h3>TOP10</h3>
-                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
-                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
-                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
-                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
-            </div>
-            <div id="top_review">
-                <h3>리뷰수</h3>
-                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
-                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
-            </div>
-            <div id="top_tag">
-                <h3>#태그</h3>
-                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>
-                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>
-            </div>
+<!--            <div id="top_10">-->
+<!--                <h3>TOP10</h3>-->
+<!--                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>-->
+<!--                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>-->
+<!--                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>-->
+<!--                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>-->
+<!--            </div>-->
+<!--            <div id="top_review">-->
+<!--                <h3>리뷰수</h3>-->
+<!--                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>-->
+<!--                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>-->
+<!--            </div>-->
+<!--            <div id="top_tag">-->
+<!--                <h3>#태그</h3>-->
+<!--                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>-->
+<!--                <a href="/info"><img  src="img/starbucks.jpg"  width=150px;></a>-->
+<!--            </div>-->
         </div>
     </div>
-</div>
-
+    <div class="left">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="font-family: arial;text-align:center;color: gray;font-size: 0.7em;">Copyright © 2021 by Cafemore, Inc. All rights reserved </p>
+    </div>
 </body>
 </html>

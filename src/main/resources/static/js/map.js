@@ -240,7 +240,7 @@ function displayInfowindow(marker, title) {
 
     var infoTitle = document.querySelectorAll('.info-title');
     infoTitle.forEach(function(e) {
-        var w = e.offsetWidth;
+        var w = e.offsetWidth+0.3;
         var ml = w/2;
         e.parentElement.style.top = "65px";
         e.parentElement.style.left = "50%";
