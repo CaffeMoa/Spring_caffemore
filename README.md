@@ -13,8 +13,6 @@ https://velog.io/@ruddms936/github-토큰-생성
 서버 실행 시 사진 
 --- 
 
-<img src="https://user-images.githubusercontent.com/66946182/103851172-7035a580-50ec-11eb-8faa-f165f7462f73.png">
-
 ### 업데이트 됨! 
 
 <img src="https://user-images.githubusercontent.com/66946182/104126017-99309180-539d-11eb-8048-7dc901da5f12.png">
