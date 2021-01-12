@@ -1,3 +1,40 @@
+var select_center = function (select_obj){
+    // 우선 selectbox에서 선택된 index를 찾고
+    var selected_index = select_obj.selectedIndex;
+    // 선택된 index의 value를 찾고
+    var selected_value = select_obj.options[selected_index].value;
+    // 원하는 동작을 수행한다. 여기서는 그냥 alert해주는 식으로만 처리함.
+    // alert(selected_value);
+    center_list = [
+        [127.065333,37.493712],
+        [127.149107,37.547522],
+        [127.013272,37.640709],
+        [126.842859,37.558439],
+        [126.947435,37.464570],
+        [127.088351,37.543059],
+        [126.858351,37.491580],
+        [126.902894,37.457774],
+        [127.077134,37.649734],
+        [127.034471,37.666330],
+        [127.057221,37.579132],
+        [126.953734,37.496074],
+        [126.910326,37.556708],
+        [126.941154,37.574997],
+        [127.033244,37.470739],
+        [127.043114,37.54824],
+        [127.019696,37.602916],
+        [127.118003,37.502167],
+        [126.857525,37.521940],
+        [126.912302,37.519739],
+        [126.981987,37.528582],
+        [126.929119,37.616430],
+        [126.97942,37.592128],
+        [126.997985,37.557335],
+        [127.095157,37.595193]
+    ];
+    setCenter(center_list[selected_value][0],center_list[selected_value][1]);
+};
+
 // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
 var placeOverlay = new kakao.maps.CustomOverlay({zIndex:1}),
     contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
@@ -43,6 +80,16 @@ function addEventHandle(target, type, callback) {
     } else {
         target.attachEvent('on' + type, callback);
     }
+}
+
+//지도 중심좌표 이동 시키기
+function setCenter(centerx,centery) {
+    // 이동할 위도 경도 위치를 생성합니다
+    var moveLatLon = new kakao.maps.LatLng(centery,centerx);
+
+    // 지도 중심을 부드럽게 이동시킵니다
+    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+    map.setCenter(moveLatLon);
 }
 
 // 카테고리 검색을 요청하는 함수입니다
