@@ -58,6 +58,7 @@ body{
 	height:30px;
 }
 .login-button-wrap {
+	margin-top: 5px;
 	padding-top: 13px;
 }
 .login-button-wrap button{
@@ -67,6 +68,19 @@ body{
 	background: var(--cafemore-color);
 	color: white;
 	border: solid 1px var(--cafemore-border-color);
+	border-radius: 5px;
+}
+.sign-in-button-wrap{
+	padding-top: 13px;
+}
+.sign-in-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: #7b9edd;
+	color: white;
+	border: solid 1px #7b9edd;
+	border-radius: 5px;
 }
 .Easy-sgin-in-wrap{
 	display: flex;
