@@ -22,6 +22,24 @@ https://velog.io/@ruddms936/github-토큰-생성
 Screen Shot
 --- 
 
+### 메인 화면 
+
+<img src="https://user-images.githubusercontent.com/66946182/110210241-12e38800-7ed4-11eb-8649-9323e46d5171.png">
+
+
+### 로그인 화면 
+
+<img src="https://user-images.githubusercontent.com/66946182/110210245-170fa580-7ed4-11eb-80ac-862929f87617.png">
+
+
+### 회원 가입 화면 
+
+<img src="https://user-images.githubusercontent.com/66946182/110210251-1b3bc300-7ed4-11eb-9531-7133c73150ed.png">
+
+
+### 카페 지도 
+
+
 1 ) 기본 창 크기인경우
 
 <img src="https://user-images.githubusercontent.com/66946182/110203625-8f656f00-7eb2-11eb-82d3-8efa47453d83.png">
