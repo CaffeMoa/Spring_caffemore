@@ -20,24 +20,28 @@ https://velog.io/@ruddms936/github-토큰-생성
 - 왼쪽 리스트에 마우스 올릴 시 해당 카페위치에 카페 이름 나타남 
 
 Screen Shot
---- 
+====
 
-### 메인 화면 
+메인 화면 
+---
 
 <img src="https://user-images.githubusercontent.com/66946182/110210400-e1b78780-7ed4-11eb-9d84-8eefdfb29a22.png">
 
 
-### 로그인 화면 
+로그인 화면 
+---
 
 <img src="https://user-images.githubusercontent.com/66946182/110210435-0dd30880-7ed5-11eb-88af-d14734029528.png">
 
 
-### 회원 가입 화면 
+회원 가입 화면 
+---
 
 <img src="https://user-images.githubusercontent.com/66946182/110210371-b339ac80-7ed4-11eb-97cf-d36ea14ddc33.png">
 
 
-### 카페 지도 
+카페 지도 
+---
 
 
 1 ) 기본 창 크기인경우
