@@ -31,7 +31,7 @@ Screen Shot
 2 ) 창 크기를 줄일 경우 
 
 <div>
-<img src="https://user-images.githubusercontent.com/66946182/110203631-98564080-7eb2-11eb-8494-28596f865f40.png" width = "45%">
+<img src="https://user-images.githubusercontent.com/66946182/110203832-99d43880-7eb3-11eb-8a07-4a4bc4a287d8.png" width = "45%">
 <img src="https://user-images.githubusercontent.com/66946182/110203635-9c825e00-7eb2-11eb-967c-68cdec597523.png" width = "45%">
 </div>
 
