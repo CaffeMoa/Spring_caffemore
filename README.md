@@ -21,10 +21,17 @@ https://velog.io/@ruddms936/github-토큰-생성
 
 Screen Shot
 --- 
+
+1 ) 기본 창 크기인경우
+
 <img src="https://user-images.githubusercontent.com/66946182/110203625-8f656f00-7eb2-11eb-82d3-8efa47453d83.png">
 
-<img src="https://user-images.githubusercontent.com/66946182/110203631-98564080-7eb2-11eb-8494-28596f865f40.png">
 
-<img src="https://user-images.githubusercontent.com/66946182/110203635-9c825e00-7eb2-11eb-967c-68cdec597523.png">
 
+2 ) 창 크기를 줄일 경우 
+
+<div>
+<img src="https://user-images.githubusercontent.com/66946182/110203631-98564080-7eb2-11eb-8494-28596f865f40.png" width = "45%">
+<img src="https://user-images.githubusercontent.com/66946182/110203635-9c825e00-7eb2-11eb-967c-68cdec597523.png" width = "45%">
+</div>
 
