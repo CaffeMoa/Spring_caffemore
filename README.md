@@ -24,17 +24,17 @@ Screen Shot
 
 ### 메인 화면 
 
-<img src="https://user-images.githubusercontent.com/66946182/110210241-12e38800-7ed4-11eb-8649-9323e46d5171.png">
+<img src="https://user-images.githubusercontent.com/66946182/110210400-e1b78780-7ed4-11eb-9d84-8eefdfb29a22.png">
 
 
 ### 로그인 화면 
 
-<img src="https://user-images.githubusercontent.com/66946182/110210245-170fa580-7ed4-11eb-80ac-862929f87617.png">
+<img src="https://user-images.githubusercontent.com/66946182/110210435-0dd30880-7ed5-11eb-88af-d14734029528.png">
 
 
 ### 회원 가입 화면 
 
-<img src="https://user-images.githubusercontent.com/66946182/110210251-1b3bc300-7ed4-11eb-9531-7133c73150ed.png">
+<img src="https://user-images.githubusercontent.com/66946182/110210371-b339ac80-7ed4-11eb-97cf-d36ea14ddc33.png">
 
 
 ### 카페 지도 
