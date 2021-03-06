@@ -10,8 +10,6 @@ https://velog.io/@ruddms936/github-토큰-생성
 
 위에 거 참고하셈요 
 
-서버 실행 시 사진 
---- 
 
 ### 기능
 
@@ -20,6 +18,9 @@ https://velog.io/@ruddms936/github-토큰-생성
 - 지도 움직일 시 바뀐 위치 기반으로 카페 검색
 
 - 왼쪽 리스트에 마우스 올릴 시 해당 카페위치에 카페 이름 나타남 
+
+Screen Shot
+--- 
 
 <img src="https://user-images.githubusercontent.com/66946182/110198851-be6ee700-7e98-11eb-86ef-507a81dc3395.png">
 
