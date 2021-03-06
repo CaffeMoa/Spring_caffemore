@@ -80,7 +80,7 @@
     <div class="left" style="margin-left: 20px; float : left;padding: 0px;">
         <div id = "select">
 <!--            <select style="font-family: arial;font-size: 0.7em;" id ="sl"style="position: left"> 이거 하면 왜 에러나지 -->
-            <select name="sl_center" id ="sl" onchange="select_center(this);">
+            <select name="sl_center" id ="sl" onchange="select_center(this);" style="border-radius: 5px">
                 <option value="0">강남구</option>
                 <option value="1">강동구</option>
                 <option value="2">강북구</option>
@@ -110,7 +110,7 @@
         </div>
         <br>
         <div class="map_wrap">
-            <div id="map" style="width:100%;height:650px;position:relative;overflow:hidden;"></div>
+            <div id="map" style="width:100%;height:650px;position:relative;overflow:hidden; border-radius: 10px"></div>
             <div id="menu_wrap" class="bg_white">
                 <ul id="placesList"></ul>
                 <div id="pagination"></div>
@@ -139,7 +139,7 @@
             <button id ="sb"><img id="search_image" src="img/search.png"  width=80%;></button>
         </div>
         <br>
-        <div id="sidebar" style="overflow: scroll;">
+        <div id="sidebar" style="overflow: scroll; border-radius: 10px">
 <!--            <div id="top_10">-->
 <!--                <h3>TOP10</h3>-->
 <!--                <a href="/info"><img  src="img/hollys.JPG"  width=150px;></a>-->
