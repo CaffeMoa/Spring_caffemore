@@ -1,11 +1,11 @@
 <!doctype html>
 <style>
     .left{
-        width: 70%;
+        width: 65%;
         float: left;
     }
     .right{
-        width:25%;
+        width:30%;
         float: right;
         margin-bottom: 30px;
     }
@@ -17,20 +17,29 @@
         margin-bottom: 5px;
         border: 1px solid #bcbcbc;
     }
-    @media(max-width:1000px){
+
+    /* 1300 보다 작은 경우에 이렇게*/
+    @media(max-width:1300px){
         div.left{
-            width: 100%;
+            width: 95%;
             float: left;
             position: relative;
-            margin-right: 100px;;
         }
         div.right{
             float: right;
-            width: 100%;
+            width: 95%;
             position: relative;
-            margin-left: 100px;;
+            margin-top: 100px;
+            margin-left: 100px;
         }
     }
+    /*700보다 작다면*/
+    @media (max-width: 700px) {
+        div.right{
+            margin-top: 200px;
+        }
+    }
+
     ul{
         list-style:none;
     }
