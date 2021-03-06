@@ -14,7 +14,10 @@ https://velog.io/@ruddms936/github-토큰-생성
 --- 
 
 - 위에 주소 바꿀 시 (강남구 -> 강동구) 바꾼 위치대로 다시 카페 검색
+
 - 지도 움직일 시 바뀐 위치 기반으로 카페 다시 검색 함 
+
+- 왼쪽 리스트에 마우스 올릴 시 해당 카페위치에 카페 이름 나타남 
 
 <img src="https://user-images.githubusercontent.com/66946182/104126017-99309180-539d-11eb-8048-7dc901da5f12.png">
 
