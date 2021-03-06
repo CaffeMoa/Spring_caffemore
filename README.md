@@ -21,9 +21,10 @@ https://velog.io/@ruddms936/github-토큰-생성
 
 Screen Shot
 --- 
+<img src="https://user-images.githubusercontent.com/66946182/110203625-8f656f00-7eb2-11eb-82d3-8efa47453d83.png">
 
-<img src="https://user-images.githubusercontent.com/66946182/110198851-be6ee700-7e98-11eb-86ef-507a81dc3395.png">
+<img src="https://user-images.githubusercontent.com/66946182/110203631-98564080-7eb2-11eb-8494-28596f865f40.png">
 
-<img src="https://user-images.githubusercontent.com/66946182/110198387-7b5f4480-7e95-11eb-9ff0-c8b30d2a1540.png">
+<img src="https://user-images.githubusercontent.com/66946182/110203635-9c825e00-7eb2-11eb-967c-68cdec597523.png">
 
 
