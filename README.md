@@ -1,6 +1,6 @@
 # Spring_caffemore
 
-- 스프링 서버용
+- 스프링 서버용 (카카오맵 api 활용)
 
 서버 작동 후 localhost:8080 입력하면 됨!
 
