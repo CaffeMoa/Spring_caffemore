@@ -1,31 +1,33 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <title>로그인/회원가입</title>
-    <title>Cafemore::카페모아bb</title>
-  	<link rel="stylesheet" href="/css/login_style.css">
-  </head>
-  <body>
-    <div id="header">
-        <!--로고 이미지 -->
-        <a href="/"><img id="logo_image" src="img/logo.png"
-            width="230px"; height="60px"></a>
-		<!--회원가입-->
-		<a href="/login" style="position: absolute; right: 80px; top: 30px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
-																					  onmouseout="this.src='img/loginfont.png'" width=130px;></a>
-        <!--프로필-->
-        <a href="/profile"><img id="profile_image" src="img/profile.png"
-          width=40px; style="position: absolute; right: 20px; top: 20px;"></a>
-    </div>
-    <div class="main-container">
-		<div class="main-wrap">
+<head>
+	<meta charset="utf-8">
+	<title>로그인/회원가입</title>
+	<title>Cafemore</title>
+	<link rel="stylesheet" href="css/login_style.css">
+</head>
+<body>
+<div id="header">
+	<!--로고 이미지 -->
+	<a href="/"><img id="logo_image" src="img/logo.png"
+					 width="200px" height="auto"></a>
+	<!--카페 검색 -->
+	<a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
+																			  onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
+	<!--회원가입-->
+	<a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+																			  onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+	<!--프로필-->
+	<a href="/profile"><img id="profile_image" src="img/profile.png"
+							width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
+</div>
+<div class="main-container">
+	<div class="main-wrap">
 		<section class="login-input-section-wrap">
-			<div class="login-input-wrap">	
+			<div class="login-input-wrap">
 				<input placeholder="아이디" type="text"></input>
 			</div>
-			<div class="login-input-wrap password-wrap">	
+			<div class="login-input-wrap password-wrap">
 				<input placeholder="비밀번호" type="password"></input>
 			</div>
 			<div class="login-button-wrap">
@@ -35,12 +37,12 @@
 		<section class="Easy-sgin-in-wrap">
 			<h2>또는</h2>
 			<ul class="sign-button-list">
-				<li><button><i class="naver-login"></i><img src="img/naver-login.png" width="95%" ></button></li>
-				<li><button><i class="kakao-login"></i><img src="img/kakao-login.png" width="95%"></button></li>
-				<li><button><i class="google-login"></i><img src="img/google-login.png" width="95%"></button></li>
+				<li><button style="border: none;background-color: none; background: none;"><i class="naver-login"></i><img src="img/naver-login.png" width="90%" ></button></li><br>
+				<li><button style="border: none;background-color: none; background: none;"><i class="kakao-login"></i><img src="img/kakao-login.png" width="90%"></button></li><br>
+				<li><button style="border: none;background-color: none; background: none;"><i class="google-login"></i><img src="img/google-login.png" width="90%"></button></li><br>
 			</ul>
 		</section>
-		</div>
 	</div>
-  </body>
+</div>
+</body>
 </html>
