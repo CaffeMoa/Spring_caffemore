@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>로그인/회원가입</title>
@@ -7,47 +8,89 @@
 	<link rel="stylesheet" href="css/login_style.css">
 </head>
 <body style="background-color: white">
-<div id="header">
-	<!--로고 이미지 -->
-	<a href="/"><img id="logo_image" src="img/logo.png"
-					 width="200px" height="auto"></a>
-	<!--카페 검색 -->
-	<a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
-																			  onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
-	<!--회원가입-->
-	<a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
-																			  onmouseout="this.src='img/loginfont.png'" width=130px;></a>
-	<!--프로필-->
-	<a href="/profile"><img id="profile_image" src="img/profile.png"
-							width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
-</div>
-<div class="main-container" style="background-color: white">
-	<div class="main-wrap">
-		<section class="login-input-section-wrap">
-			<div class="login-input-wrap">
-				<input placeholder="아이디" type="text"></input>
-			</div>
-			<div class="login-input-wrap password-wrap">
-				<input placeholder="비밀번호" type="password"></input>
-			</div>
-			<div class="login-button-wrap">
-				<button>로그인</button>
-			</div>
-		</section>
-		<section class="Easy-sgin-in-wrap">
-			<h2>또는</h2><br>
-			<div class="sign-in-button-wrap">
-				<a href="/signin">
-					<button>회원가입</button>
-				</a>
-			</div>
-			<ul class="sign-button-list">
-				<li><button style="border: none;background-color: none; background: none;"><i class="naver-login"></i><img src="img/naver-login.png" width="90%" ></button></li><br>
-				<li><button style="border: none;background-color: none; background: none;"><i class="kakao-login"></i><img src="img/kakao_login_large_wide.png" width="90%"></button></li><br>
-				<li><button style="border: none;background-color: none; background: none;"><i class="google-login"></i><img src="img/google-login.png" width="90%"></button></li><br>
-			</ul>
-		</section>
+	<script src ="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+		//7baca3bb9b78c8e4f475fe79b3d9215b
+		window.Kakao.init("7baca3bb9b78c8e4f475fe79b3d9215b");
+		function kakaoLogin(){
+			window.Kakao.Auth.login({
+				scope:'profile, account_email, gender, age_range',
+				success: function (authObj){
+					alert("로그인 성공");
+					console.log(authObj);
+					window.Kakao.API.request({
+						url:'/v2/user/me',
+						success: res => {
+							const kakao_account = res.kakao_account;
+							console.log(kakao_account);
+						}
+					});
+				}
+			});
+		}
+		function kakaoLogout() {
+			if (!Kakao.Auth.getAccessToken()) {
+				alert('Not logged in.')
+				return
+			}
+			Kakao.Auth.logout(function() {
+				alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
+			})
+		}
+	</script>
+	<div id="header">
+		<!--로고 이미지 -->
+		<a href="/"><img id="logo_image" src="img/logo.png" width="200px" height="auto"></a>
+			<a href="javascript:kakaoLogout();">
+				<div class="subheading" style="color: #7e7777; position: absolute; right: 200px; top:20px; font-weight: bold; text-decoration:none">
+					로그아웃
+				</div>
+			</a>
+		<div class="col">
+			<img th:src="${thumbnailImage}"><p class="text-right" th:if="${username != null}" th:text="${username} + '님, 안녕하세요!'"></p>
+		</div>
+<!--		&lt;!&ndash;카페 검색 &ndash;&gt;-->
+<!--		<a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"-->
+<!--																				  onmouseout="this.src='img/cafesearch.png'" width=130px;></a>-->
+<!--		&lt;!&ndash;회원가입&ndash;&gt;-->
+<!--		<a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"-->
+<!--																				  onmouseout="this.src='img/loginfont.png'" width=130px;></a>-->
+<!--		&lt;!&ndash;프로필&ndash;&gt;-->
+<!--		<a href="/profile"><img id="profile_image" src="img/profile.png"-->
+<!--								width=40px; style="position: absolute; right: 20px; top: 10px; "></a>-->
 	</div>
-</div>
+	<div class="main-container" style="background-color: white">
+		<div class="main-wrap">
+			<section class="login-input-section-wrap">
+				<div class="login-input-wrap">
+					<input placeholder="아이디" type="text"></input>
+				</div>
+				<div class="login-input-wrap password-wrap">
+					<input placeholder="비밀번호" type="password"></input>
+				</div>
+				<div class="login-button-wrap">
+					<button>로그인</button>
+				</div>
+			</section>
+			<section class="Easy-sgin-in-wrap">
+				<h2>또는</h2><br>
+				<div class="sign-in-button-wrap">
+					<a href="/signin">
+						<button>회원가입</button>
+					</a>
+				</div>
+				<ul class="sign-button-list">
+					<li><button style="border: none;background-color: none; background: none;"><i class="naver-login"></i><img src="img/naver-login.png" width="90%" ></button></li><br>
+					<li>
+						<a href="javascript:kakaoLogin();">
+<!--							https://kauth.kakao.com/oauth/authorize?client_id=b84f3f30bef008822d863ad1e06c2a68&redirect_uri=http://localhost:8080/kakao_login_api&response_type=code-->
+							<button style="border: none;background-color: none; background: none;"><i class="kakao-login"></i><img src="img/kakao_login_large_wide.png" width="90%"></button>
+						</a>
+					</li><br>
+					<li><button style="border: none;background-color: none; background: none;"><i class="google-login"></i><img src="img/google-login.png" width="90%"></button></li><br>
+				</ul>
+			</section>
+		</div>
+	</div>
 </body>
 </html>
