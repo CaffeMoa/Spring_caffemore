@@ -8,36 +8,6 @@
 	<link rel="stylesheet" href="css/login_style.css">
 </head>
 <body style="background-color: white">
-	<script src ="https://developers.kakao.com/sdk/js/kakao.js"></script>
-	<script>
-		//7baca3bb9b78c8e4f475fe79b3d9215b
-		window.Kakao.init("7baca3bb9b78c8e4f475fe79b3d9215b");
-		function kakaoLogin(){
-			window.Kakao.Auth.login({
-				scope:'profile, account_email, gender, age_range',
-				success: function (authObj){
-					alert("로그인 성공");
-					console.log(authObj);
-					window.Kakao.API.request({
-						url:'/v2/user/me',
-						success: res => {
-							const kakao_account = res.kakao_account;
-							console.log(kakao_account);
-						}
-					});
-				}
-			});
-		}
-		function kakaoLogout() {
-			if (!Kakao.Auth.getAccessToken()) {
-				alert('Not logged in.')
-				return
-			}
-			Kakao.Auth.logout(function() {
-				alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
-			})
-		}
-	</script>
 	<div id="header">
 		<!--로고 이미지 -->
 		<a href="/"><img id="logo_image" src="img/logo.png" width="200px" height="auto"></a>
@@ -82,8 +52,7 @@
 				<ul class="sign-button-list">
 					<li><button style="border: none;background-color: none; background: none;"><i class="naver-login"></i><img src="img/naver-login.png" width="90%" ></button></li><br>
 					<li>
-						<a href="javascript:kakaoLogin();">
-<!--							https://kauth.kakao.com/oauth/authorize?client_id=b84f3f30bef008822d863ad1e06c2a68&redirect_uri=http://localhost:8080/kakao_login_api&response_type=code-->
+						<a href="/kakao/login">
 							<button style="border: none;background-color: none; background: none;"><i class="kakao-login"></i><img src="img/kakao_login_large_wide.png" width="90%"></button>
 						</a>
 					</li><br>
