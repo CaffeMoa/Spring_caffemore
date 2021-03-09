@@ -23,6 +23,7 @@ public class kakaoController {
         //    클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
         if(userInfo.get("email")!=null){
             session.setAttribute("userId",userInfo.get("email"));
+            session.setAttribute("nickname",userInfo.get("nickname"));
             session.setAttribute("access_Token",access_Token);
         }
 
@@ -33,6 +34,7 @@ public class kakaoController {
     public String logout(HttpSession session){
         kakao.kakaoLogout((String) session.getAttribute("access_Token"));
         session.removeAttribute("access_Token");
+        session.removeAttribute("nickname");
         session.removeAttribute("userId");
 
         System.out.println("logout");

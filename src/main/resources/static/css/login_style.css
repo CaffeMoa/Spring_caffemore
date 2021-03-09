@@ -47,9 +47,7 @@ body{
 	border-radius: 12px;
 	background: white;
 }
-.password-wrap{
-	margin-top: 13px;
-}
+
 .login-input-wrap input{
 	border: none;
 	width:400px;
@@ -58,6 +56,28 @@ body{
 	margin-left: 10px;
 	height:30px;
 }
+
+.password-wrap{
+	margin-top: 13px;
+}
+
+.form-group{
+	width: 430px;
+	height :48px;
+	border: solid 1px var(	--border-gray-color );
+	border-radius: 12px;
+	background: white;
+}
+
+.form-group input{
+	border: none;
+	width:400px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+
 .login-button-wrap {
 	margin-top: 5px;
 	padding-top: 13px;

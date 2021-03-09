@@ -2,6 +2,7 @@ package com.spring.springcaffemore.repository;
 
 import com.spring.springcaffemore.domain.Member;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -31,6 +32,13 @@ public class MemberRepository {
     public List<Member> findByemail(String email){
         return em.createQuery("select m from Member m where m.email = :email", Member.class)
                 .setParameter("email",email)
+                .getResultList();
+    }
+
+    public List<Member> findMember(String email, String password){
+        return em.createQuery("select m from Member m where m.email = :email and m.password =: password",Member.class)
+                .setParameter("email",email)
+                .setParameter("password",password)
                 .getResultList();
     }
 }

@@ -18,9 +18,6 @@
 				로그아웃
 			</div>
 		</a>
-		<div class="col">
-			<img th:src="${thumbnailImage}"><p class="text-right" th:if="${username != null}" th:text="${username} + '님, 안녕하세요!'"></p>
-		</div>
 <!--		&lt;!&ndash;카페 검색 &ndash;&gt;-->
 <!--		<a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"-->
 <!--																				  onmouseout="this.src='img/cafesearch.png'" width=130px;></a>-->
@@ -34,20 +31,24 @@
 	<div class="main-container" style="background-color: white">
 		<div class="main-wrap">
 			<section class="login-input-section-wrap">
-				<div class="login-input-wrap">
-					<input placeholder="아이디" type="text"></input>
-				</div>
-				<div class="login-input-wrap password-wrap">
-					<input placeholder="비밀번호" type="password"></input>
-				</div>
-				<div class="login-button-wrap">
-					<button>로그인</button>
-				</div>
+				<form action="/members/login" method="post">
+					<div class="login-input-wrap">
+						<label th:for="inputEmail"></label>
+						<input th:type="email" id="inputEmail" name="inputEmail" placeholder="이메일 주소를 입력해주세요" required autofocus>
+					</div>
+					<div class="login-input-wrap password-wrap">
+						<label th:for="inputPassword"></label>
+						<input th:type="password" id="inputPassword" name="inputPassword" placeholder="비밀번호를 입력해주세요" required>
+					</div>
+					<div class="login-button-wrap">
+						<button>로그인</button>
+					</div>
+				</form>
 			</section>
 			<section class="Easy-sgin-in-wrap">
 				<h2>또는</h2><br>
 				<div class="sign-in-button-wrap">
-					<a href="/signin">
+					<a href="/members/new">
 						<button>회원가입</button>
 					</a>
 				</div>
