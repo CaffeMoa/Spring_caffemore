@@ -10,12 +10,14 @@
 <body style="background-color: white">
 	<div id="header">
 		<!--로고 이미지 -->
-		<a href="/"><img id="logo_image" src="img/logo.png" width="200px" height="auto"></a>
-			<a href="javascript:kakaoLogout();">
-				<div class="subheading" style="color: #7e7777; position: absolute; right: 200px; top:20px; font-weight: bold; text-decoration:none">
-					로그아웃
-				</div>
-			</a>
+		<a href="/">
+			<img id="logo_image" src="img/logo.png" width="200px" height="auto">
+		</a>
+		<a href="/kakao/logout">
+			<div class="subheading" style="color: #7e7777; position: absolute; right: 200px; top:20px; font-weight: bold; text-decoration:none">
+				로그아웃
+			</div>
+		</a>
 		<div class="col">
 			<img th:src="${thumbnailImage}"><p class="text-right" th:if="${username != null}" th:text="${username} + '님, 안녕하세요!'"></p>
 		</div>
