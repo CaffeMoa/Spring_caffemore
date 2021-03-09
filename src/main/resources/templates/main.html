@@ -33,7 +33,7 @@
         <a href="/profile"><img id="profile_image" src="img/profile.png"
                                 width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
         <div class="subheading" style="color: #1b1e21; position: absolute;right: 500px;top: 20px; font-weight: bold;">
-            <p class="text-right" th:if="${userId != null}" th:text="${nickname} + '님, 안녕하세요!'"></p>
+            <p class="member" th:if="${member != null}" th:text="${member} + '님, 안녕하세요!'"></p>
         </div>
     </div>
     <!-- Page Header -->

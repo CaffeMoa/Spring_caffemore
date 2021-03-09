@@ -45,13 +45,17 @@ public class MemberController {
 
     //로그인 버튼 누름
     @PostMapping("/members/login")
-    public String login(String inputEmail,String inputPassword){
+    public String login(String inputEmail,String inputPassword,Model model){
         List<Member> memberList = this.memberService.findMember(inputEmail, inputPassword);
         //로그인 성공
         if(memberList != null){
             System.out.println("login success");
+            model.addAttribute("member",memberList);
+
             return "redirect:/";
         }
+        //로그인 실패
         return "/login";
     }
+
 }
