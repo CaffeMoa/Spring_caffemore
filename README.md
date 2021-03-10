@@ -29,7 +29,7 @@ Screen Shot
 
 <img src="https://user-images.githubusercontent.com/66946182/110210400-e1b78780-7ed4-11eb-9d84-8eefdfb29a22.png">
 
-2) 로그인을 하면 
+2 ) 로그인을 하면 
 
 <img src="https://user-images.githubusercontent.com/66946182/110653622-c57f5780-8200-11eb-837c-602ec5b5e44c.png">
 
