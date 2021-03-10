@@ -65,5 +65,6 @@ Screen Shot
 <img src="https://user-images.githubusercontent.com/66946182/110569584-098a4200-8198-11eb-9bcc-7f802b8820e3.png">
 
 2 ) 로그인을 한 경우 
+
 <img src="https://user-images.githubusercontent.com/66946182/110652797-0c208200-8200-11eb-969e-8bdcbab4837e.png">
 
