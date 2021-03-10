@@ -57,3 +57,7 @@ Screen Shot
 <img src="https://user-images.githubusercontent.com/66946182/110203635-9c825e00-7eb2-11eb-967c-68cdec597523.png" width = "45%">
 </div>
 
+카페 정보
+---
+
+<img src="https://user-images.githubusercontent.com/66946182/110569584-098a4200-8198-11eb-9bcc-7f802b8820e3.png">
