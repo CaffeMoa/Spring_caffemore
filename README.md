@@ -25,7 +25,13 @@ Screen Shot
 메인 화면 
 ---
 
+1 ) 로그인 하지 않은 경우 
+
 <img src="https://user-images.githubusercontent.com/66946182/110210400-e1b78780-7ed4-11eb-9d84-8eefdfb29a22.png">
+
+2) 로그인을 하면 
+
+<img src="https://user-images.githubusercontent.com/66946182/110653622-c57f5780-8200-11eb-837c-602ec5b5e44c.png">
 
 
 로그인 화면 
@@ -65,6 +71,8 @@ Screen Shot
 <img src="https://user-images.githubusercontent.com/66946182/110569584-098a4200-8198-11eb-9bcc-7f802b8820e3.png">
 
 2 ) 로그인을 한 경우 
+
+<img src="https://user-images.githubusercontent.com/66946182/110653340-805b2580-8200-11eb-9ab0-ea57acf971bc.png">
 
 <img src="https://user-images.githubusercontent.com/66946182/110652797-0c208200-8200-11eb-969e-8bdcbab4837e.png">
 
