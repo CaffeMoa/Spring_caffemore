@@ -6,8 +6,36 @@
     margin-bottom: 5px;
     overflow: scroll;
   }
-  hr{
-    background-color: #FDFBFC;
+
+  #btn_review{
+    display:block;
+    width: 130px;
+    height: 50px;
+    color: black;
+    border-radius: 8px;
+    transition:all 0.9s, color 0.3;
+  }
+
+  #btn_review:hover{
+    color:#FAF0F0;
+    box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset,
+    0 -80px 0 0 rgba(0,0,0,0.25) inset;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th, tr {
+    border-bottom: 1px solid #FAF0F0;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #FAF0F0;
   }
 
 </style>
@@ -39,14 +67,17 @@
     <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
                                                                               onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
     <!--회원가입-->
-    <a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
-                                                                              onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+    <a th:if="${session.email == null}" href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+                                                                                                               onmouseout="this.src='img/loginfont.png'" width=130px;></a>
     <!--프로필-->
     <a href="/profile"><img id="profile_image" src="img/profile.png"
                             width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
-    <div class="subheading" style="color: #1b1e21; position: absolute;right: 500px;top: 20px; font-weight: bold;">
-      <p class="member" th:if="${member != null}" th:text="${member} + '님, 안녕하세요!'"></p>
-    </div>
+    <!--        로그아웃 -->
+    <a th:if="${session.email != null}" href="/kakao/logout">
+      <div class="subheading" style="font-family: Arial; font-size: 0.9em; color: #7e7777; position: absolute; right: 100px; top:16px; font-weight: bold; text-decoration:none">
+        로그아웃
+      </div>
+    </a>
   </div>
   <!-- Page Header -->
   <header class="masthead" style="background-color: #FAF0F0;">
@@ -77,12 +108,36 @@
         <br>
         <br>
         <div id ="footer">
-          <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1em;font-weight: 600;">카페 후기</p>
+          <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1.5em;font-weight: 600;">
+            카페 후기
+            <a href="/reviews/new">
+              <button th:if="${session.email != null}" id="btn_review" style="position: absolute; right: 50px; font-size: 0.5em; top: 80px; font-weight: 400; background-color: white; color: black; border: 1px solid lightgrey; border-radius: 15px;">
+                리뷰 쓰기
+              </button>
+            </a>
+          </p>
           <hr>
           <div id="box">
-
+            <table>
+              <thead>
+              <tr>
+                <th>#</th>
+                <th style="width: 25%;">닉네임</th>
+                <th style="width: 45%;">리뷰</th>
+                <th>작성일</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="reviewsList : ${reviewsList}">
+                <td><span th:text="${reviewsList.id}"></span></td>
+                <td><span th:text="${reviewsList.author}"></span></td>
+                <td><span th:text="${reviewsList.content}"></span></td>
+                <td><span th:text="${#temporals.format(reviewsList.reviewDate,'MM-dd HH:mm')}"></span></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
-          <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1em;font-weight: 600;">카페 인스타그램</p>
+          <p style="font-family: arial;color: rgb(46, 46, 46);font-size: 1.5em;font-weight: 600;">카페 인스타그램</p>
           <hr>
           <div id="box">
 

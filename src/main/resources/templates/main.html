@@ -27,14 +27,20 @@
         <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
                                                                                   onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
         <!--회원가입-->
-        <a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+        <a th:if="${session.email == null}" href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
                                                                                   onmouseout="this.src='img/loginfont.png'" width=130px;></a>
         <!--프로필-->
         <a href="/profile"><img id="profile_image" src="img/profile.png"
                                 width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
-        <div class="subheading" style="color: #1b1e21; position: absolute;right: 500px;top: 20px; font-weight: bold;">
-            <p class="member" th:if="${member != null}" th:text="${member} + '님, 안녕하세요!'"></p>
+        <div class="subheading" style="font-family: Arial; font-size: 0.8em; color: #A8A8A8; position: absolute;right: 200px;top: 17px; font-weight: bold;">
+            <span th:if="${session.email != null}" th:text="${session.email} + '님'"></span>
         </div>
+<!--        로그아웃 -->
+        <a th:if="${session.email != null}" href="/kakao/logout">
+            <div class="subheading" style="font-family: Arial; font-size: 0.9em; color: #7e7777; position: absolute; right: 100px; top:16px; font-weight: bold; text-decoration:none">
+                로그아웃
+            </div>
+        </a>
     </div>
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('img/main.jpg')">

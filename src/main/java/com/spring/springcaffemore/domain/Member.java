@@ -1,12 +1,9 @@
 package com.spring.springcaffemore.domain;
 
-import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +21,4 @@ public class Member {
 
     private Long point;
 
-    @OneToMany(mappedBy = "member")
-    private List<Review> reviewList = new ArrayList<>();
 }

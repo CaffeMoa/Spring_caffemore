@@ -78,6 +78,23 @@ body{
 	height:30px;
 }
 
+.form-review{
+	width: 430px;
+	height :300px;
+	border: solid 1px var(	--border-gray-color );
+	border-radius: 12px;
+	background: white;
+}
+
+.form-review input{
+	border: none;
+	width:90%;
+	height:80%;
+	margin-top: 5px;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
 .login-button-wrap {
 	margin-top: 5px;
 	padding-top: 13px;

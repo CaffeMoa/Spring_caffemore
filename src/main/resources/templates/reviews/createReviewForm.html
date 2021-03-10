@@ -1,0 +1,50 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+    <title>Caffemore</title>
+    <link rel="stylesheet" href="/css/login_style.css">
+</head>
+<body style="background-color: white">
+<div id="header">
+    <!--로고 이미지 -->
+    <a href="/"><img id="logo_image" src="/img/logo.png"
+                     width="200px" height="auto"></a>
+    <!--카페 검색 -->
+    <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="/img/cafesearch.png" onmouseover="this.src='/img/cafesearch_hover.png'"
+                                                                              onmouseout="this.src='/img/cafesearch.png'" width=130px;></a>
+    <!--회원가입-->
+    <a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="/img/loginfont.png" onmouseover="this.src='/img/loginfont_hover.png'"
+                                                                              onmouseout="this.src='/img/loginfont.png'" width=130px;></a>
+    <!--프로필-->
+    <a href="/profile"><img id="profile_image" src="/img/profile.png"
+                            width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
+</div>
+<div class="main-container" style="background-color: white">
+    <div class="main-wrap">
+        <section class="login-input-section-wrap" style="margin-top: 50px;">
+<!--            /reviews/new 로 정보 넘김-->
+            <form role="form" action="/reviews/new" th:object="${reviewForm}" method="post">
+                <div class="form-review" style="width: 200px; height: 50px;">
+                    <label th:for="author"></label>
+                    <input type="text" th:field="*{author}"  class="form-control" placeholder="닉네임을 설정해주세요!"
+                           th:class="${#fields.hasErrors('author')}? 'form-controlfieldError' : 'form-control'">
+                    <p th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Incorrect date</p>
+                </div><br>
+                <div class="form-review" >
+                    <label th:for="content"></label>
+                    <input type="text" th:field="*{content}"  class="form-control" placeholder="리뷰를 작성해주세요!"
+                           th:class="${#fields.hasErrors('content')}? 'form-controlfieldError' : 'form-control'">
+                    <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Incorrect date</p>
+                </div><br>
+                <div class="login-button-wrap">
+                    <button type="submit">리뷰 작성하기</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+</body>
+</html>

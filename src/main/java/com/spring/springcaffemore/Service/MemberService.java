@@ -43,9 +43,17 @@ public class MemberService {
         return memberRepository.findMember(email,password);
     }
 
+    public List<Member> findByEmail(String email){
+        return memberRepository.findByemail(email);
+    }
+
+    public Member findOneByEmail(String email){
+        List<Member> Members = memberRepository.findByemail(email);
+        return Members.get(0);
+    }
+
     public Member findOne(Long memberIdx){
         return memberRepository.findOne(memberIdx);
     }
-
 }
 
