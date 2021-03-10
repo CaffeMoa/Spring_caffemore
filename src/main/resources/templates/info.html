@@ -1,81 +1,100 @@
 <!doctype html>
+<style>
+  #box {
+    height: 500px;
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow: scroll;
+  }
+  hr{
+    background-color: #FDFBFC;
+  }
+
+</style>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Cafemore::카페모아bb</title>
-    <style>
+<head>
+  <meta charset="utf-8">
+  <title>Cafemore</title>
+  <link rel="stylesheet" href="/css/style.css">
 
-      div{
-        width: 100%;
-      }
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-      div.left{
-        width: 30%;
-        float: left;
-        /* border: 1px solid #bcbcbc; */
-      }
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-      div.right{
-        width: 70%;
-        float: right;
-        /* border: 1px solid #bcbcbc; */
-      }
+  <!-- Custom styles for this template -->
 
-      /* 왼쪽-가게 메인 사진, 별 */
-      #content {
-      text-align: center;
-      padding: 5px;
-      margin-top: 200px;
-      }
-
-      /* 오른쪽 */
-      #sidebar {
-      width: 800px;
-      height: 300px;
-      padding: 10px;
-      margin-top: 20px;
-      border: 1px solid #bcbcbc;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="container">
-      <div id="header">
-        <!--로고 이미지 -->
-        <a href="/"><img id="logo_image" src="img/logo.png"></a>
-      </div>
-      <br>
-      <!-- 여기에 카페 이름, 별점 등등 -->
-      <div class="left">
-        <div id="content">
-          <img id="caffe_image" src="img/hollys.JPG" style="max-width: 60%; height: auto">
-          <br><br>
-          <!-- 별점 -->
-          <div id="star">
-            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
-            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
-            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
-            <img src="img/star_yellow.png" style="max-width: 8%; height: auto;">
-            <img src="img/star.png" style="max-width: 8%; height: auto;"> 
+  <link href="/css/clean-blog.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="container"; >
+  <div id="header" style="border-bottom: 1px solid white;">
+    <!--로고 이미지 -->
+    <a href="/"><img id="logo_image" src="img/logo.png"></a>
+    <!--카페 검색 -->
+    <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
+                                                                              onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
+    <!--회원가입-->
+    <a href="/login" style="position: absolute; right: 80px; top: 22px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
+                                                                              onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+    <!--프로필-->
+    <a href="/profile"><img id="profile_image" src="img/profile.png"
+                            width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
+    <div class="subheading" style="color: #1b1e21; position: absolute;right: 500px;top: 20px; font-weight: bold;">
+      <p class="member" th:if="${member != null}" th:text="${member} + '님, 안녕하세요!'"></p>
+    </div>
+  </div>
+  <!-- Page Header -->
+  <header class="masthead" style="background-color: #FAF0F0;">
+    <!-- 배경화면 색 바꾸고 싶으면 clean-blog.min.css 가서 바꾸면 됨...  -->
+    <div class="overlay" style="height: 70%;">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <a href="https://www.google.com/maps/place/%ED%95%A0%EB%A6%AC%EC%8A%A4%EC%BB%A4%ED%94%BC+%EC%B6%A9%EB%AC%B4%EB%A1%9C%EC%97%AD%EC%A0%90/@37.5608719,126.9933221,17z/data=!4m12!1m6!3m5!1s0x357ca2fccc5490f9:0x8005cfc28cb63be5!2z7ZWg66as7Iqk7Luk7ZS8IOy2qeustOuhnOyXreygkA!8m2!3d37.5608719!4d126.9933221!3m4!1s0x357ca2fccc5490f9:0x8005cfc28cb63be5!8m2!3d37.5608719!4d126.9933221">
+              <h3 style="color:#474444;text-align: center;font-size: 3em; margin-bottom: 10px;">충무로 할리스</h3>
+            </a>
+            <h4 style="color: #DA9B9B;text-align: center; font-size: 2em; margin-bottom: 20px;">
+              4.2
+            </h4>
+            <span class="subheading" style="color: rgb(0, 0, 0);text-align: center; margin-bottom: 20px;">서울특별시 중구 필동 퇴계로36길 2</span>
+            <span class="subheading" style="color: #BC8F8F; text-align: center; margin-top: 10px;">#동국대학생 할인 </span>
+            <span class="subheading" style="color: #BC8F8F; text-align: center; margin-top: 10px;">#바닐라 딜라이트</span>
           </div>
-            <h2>충무로 할리스</h2>
-        </div>
-      </div>
-
-      <div class="right">
-        <div id="sidebar">
-          <h2>사진</h2>
-        </div>
-        <div id="sidebar">
-          <h2>인스타그램</h2>
-        </div>
-        <div id="sidebar">
-          <h2>후기</h2>
         </div>
       </div>
     </div>
-  </body>
+  </header>
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="site-heading">
+        <br>
+        <br>
+        <div id ="footer">
+          <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1em;font-weight: 600;">카페 후기</p>
+          <hr>
+          <div id="box">
+
+          </div>
+          <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1em;font-weight: 600;">카페 인스타그램</p>
+          <hr>
+          <div id="box">
+
+          </div>
+          <br>
+          <br>
+          <p style="font-family: arial;text-align: center;color: gray;font-size: 0.7em;">Copyright © 2021 by Cafemore, Inc. All rights reserved</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>
