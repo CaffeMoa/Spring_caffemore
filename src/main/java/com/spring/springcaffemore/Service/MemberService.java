@@ -49,6 +49,10 @@ public class MemberService {
 
     public Member findOneByEmail(String email){
         List<Member> Members = memberRepository.findByemail(email);
+
+        if(Members.isEmpty()){
+            return null;
+        }
         return Members.get(0);
     }
 

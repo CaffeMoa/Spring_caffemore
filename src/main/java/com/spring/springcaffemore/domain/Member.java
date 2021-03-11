@@ -15,6 +15,11 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+    @OneToMany(mappedBy = "member")
+    private List<Reviews> reviews = new ArrayList<>();
+
+    private String nickname;
+
     private String email;
     private String password;
     private Long age;

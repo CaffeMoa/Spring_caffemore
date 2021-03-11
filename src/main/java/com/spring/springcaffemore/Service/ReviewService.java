@@ -2,6 +2,7 @@ package com.spring.springcaffemore.Service;
 
 import com.spring.springcaffemore.domain.Member;
 import com.spring.springcaffemore.domain.Reviews;
+import com.spring.springcaffemore.repository.MemberRepository;
 import com.spring.springcaffemore.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReviewService {
 
+    private final MemberRepository memberRepository;
     private final ReviewRepository reviewRepository;
 
     //리뷰 작성
@@ -24,8 +26,10 @@ public class ReviewService {
     }
 
     @Transactional
-    public Long review(String content,String author){
-        Reviews reviews = Reviews.createReview(content,author);
+    public Long review(Long memberId, String content,String author){
+        Member member = memberRepository.findOne(memberId);
+        Reviews reviews = Reviews.createReview(member,content,author);
+
         reviewRepository.save(reviews);
         return reviews.getId();
     }

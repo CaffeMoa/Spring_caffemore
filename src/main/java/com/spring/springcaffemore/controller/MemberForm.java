@@ -15,4 +15,7 @@ public class MemberForm {
     @NotEmpty(message = "비밀번호는 필수입니다")
     private String password;
     private Long age;
+
+    @NotEmpty(message = "닉네임은 필수입니다")
+    private String nickname;
 }

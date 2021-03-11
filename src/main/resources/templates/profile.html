@@ -1,95 +1,149 @@
 <!doctype html>
+<style>
+  #box {
+    height: 500px;
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow: scroll;
+  }
+
+  #btn_review{
+    display:block;
+    width: 130px;
+    height: 50px;
+    color: black;
+    border-radius: 8px;
+    transition:all 0.9s, color 0.3;
+  }
+
+  #btn_review:hover{
+    color:#FAF0F0;
+    box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset,
+    0 -80px 0 0 rgba(0,0,0,0.25) inset;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th, tr {
+    border-bottom: 1px solid #FAF0F0;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #FAF0F0;
+  }
+
+</style>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <title>Cafemore</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* 왼쪽 */
-    #content {
-      width: 40%;
-      height: 2000px;
-      padding: 5px;
-      margin-top: 100px;
-      margin-bottom: 20px;
-      height: 500px;
-      float: left;
-    }
-    /* 오른쪽 */
-    #sidebar-group{
-      float: left;
-      width: 55%;
-      position: relative;
-      left: 10px;
-    }
-    #sidebar {
-      width: 100%;
-      height: 300px;
-      padding: 5px;
-      margin-bottom: 30px;
-      border: 1px solid #bcbcbc;
-    }
-    #sidebar1 {
-      width: 100%;
-      height: 300px;
-      padding: 5px;
-      margin-bottom: 30px;
-    }
-    #profile{
-      width: 150px;
-      height: auto;
-      display: block;
-      margin: 0px auto;
-    }
-    @media(max-width:900px){
-      #content{
-        float: none;
-        position: relative;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 0;
-        height: 55%;
-        padding-bottom: 20px;
-      }
-      #sidebar-group{
-        float: none;
-        position: relative;
-        width: 95%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+
+  <link href="/css/clean-blog.min.css" rel="stylesheet">
 </head>
 <body>
-<div id="container">
-  <div id="header">
+<div id="container"; >
+  <div id="header" style="border-bottom: 1px solid white;">
     <!--로고 이미지 -->
     <a href="/"><img id="logo_image" src="img/logo.png"></a>
+    <!--카페 검색 -->
+    <a href="/search" style="position: absolute; left: 200px; top: 7px;"><img src="img/cafesearch.png" onmouseover="this.src='img/cafesearch_hover.png'"
+                                                                              onmouseout="this.src='img/cafesearch.png'" width=130px;></a>
     <!--회원가입-->
-    <a href="/login" style="position: absolute; right: 80px; top: 30px;"><img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'"
-                                                                                  onmouseout="this.src='img/loginfont.png'" width=130px;></a>
+    <a th:if="${session.email == null}" href="/login" style="position: absolute; right: 80px; top: 22px;">
+      <img src="img/loginfont.png" onmouseover="this.src='img/loginfont_hover.png'" onmouseout="this.src='img/loginfont.png'" width=130px;>
+    </a>
+
     <!--프로필-->
     <a href="/profile"><img id="profile_image" src="img/profile.png"
-                                width=40px; style="position: absolute; right: 20px; top: 20px; "></a>
+                            width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
+    <!--        로그아웃 -->
+    <a th:if="${session.email != null}" href="/kakao/logout">
+      <div class="subheading" style="font-family: Arial; font-size: 0.9em; color: #7e7777; position: absolute; right: 100px; top:16px; font-weight: bold; text-decoration:none">
+        로그아웃
+      </div>
+    </a>
   </div>
-  <br>
-  <div id="content">
-    <img id="profile" src="img/profile.png">
-    <br><h3 align = center >이름</h3>
-    <br><a href="/modifyInfo"><p align = center ><input type="button" name="infobtn" value="정보수정" ></p></a>
-  </div>
-  <div id="sidebar-group">
-    <div id="sidebar">
-      <h3>작성한 리뷰</h3>
+  <!-- Page Header -->
+  <header class="masthead" style="background-color: #FAF0F0;">
+    <!-- 배경화면 색 바꾸고 싶으면 clean-blog.min.css 가서 바꾸면 됨...  -->
+    <div class="overlay" style="height: 70%;">
     </div>
-    <div id="sidebar1">
-      <br>
-      <h3>뱃지</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2 style="color:#474444;text-align: center; font-size: 2.8em; margin-bottom: 50px;">
+              <span th:if="${session.email != null}" th:text="${session.nickname} + '님'"></span>
+            </h2>
+            <h4 style="color: #DA9B9B;text-align: center; font-size: 2em;">
+              <span th:if="${session.email != null}" th:text="${session.point} + '포인트'"></span>
+            </h4>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="sidebar1">
-      <br>
-      <h3>포인트</h3>
-      1000p
+  </header>
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="site-heading">
+        <br>
+        <br>
+        <div id ="footer">
+          <p style="font-family: arial;text-align: left;color: rgb(46, 46, 46);font-size: 1.5em;font-weight: 600;">
+            내가 쓴 리뷰
+          </p>
+          <hr>
+          <div id="box">
+            <table>
+              <thead>
+              <tr>
+                <th>#</th>
+                <th style="width: 25%;">닉네임</th>
+                <th style="width: 45%;">리뷰</th>
+                <th>작성일</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="reviewsList : ${reviewsList}">
+                <td><span th:text="${reviewsList.id}"></span></td>
+                <td><span th:text="${reviewsList.author}"></span></td>
+                <td><span th:text="${reviewsList.content}"></span></td>
+                <td><span th:text="${#temporals.format(reviewsList.reviewDate,'MM-dd HH:mm')}"></span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-family: arial;color: rgb(46, 46, 46);font-size: 1.5em;font-weight: 600;">
+            뱃지
+          </p>
+          <hr>
+          <div id="box">
+
+          </div>
+          <br>
+          <br>
+          <p style="font-family: arial;text-align: center;color: gray;font-size: 0.7em;">Copyright © 2021 by Cafemore, Inc. All rights reserved</p>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>

@@ -39,6 +39,7 @@ public class MemberController {
         Member member = new Member();
         member.setEmail(form.getEmail());
         member.setPassword(form.getPassword());
+        member.setNickname(form.getNickname());
         member.setAge(form.getAge());
         member.setPoint(0l);
 
@@ -53,34 +54,23 @@ public class MemberController {
     public String login(String inputEmail, String inputPassword, HttpSession session){
         // 회원이 없다면
         Member member = memberService.findOneByEmail(inputEmail);
+        if(member != null){
+            String password = member.getPassword();
+            if(password != null){
+                if(inputPassword.equals(password)){
+                    System.out.println("login success");
 
-        if(member == null){
-            System.out.println("login fail");
-            return "redirect:/login";
+                    session.setAttribute("email",inputEmail);
+                    session.setAttribute("nickname",member.getNickname());
+                    session.setAttribute("point",member.getPoint());
+
+                    return "redirect:/";
+                }
+            }
         }
+        System.out.println("login fail");
 
-        //비밀번호가 같지 않다면
-        if(!inputPassword.equals(member.getPassword())){
-            System.out.println("login fail");
-            return "redirect:/login";
-        }
-
-        System.out.println("login success");
-        session.setAttribute("email",inputEmail);
-
-        return "redirect:/main";
-//        List<Member> memberList = this.memberService.findMember(inputEmail, inputPassword);
-//        //로그인 성공
-//        if(memberList != null){
-//            System.out.println("login success");
-//
-//            session.setAttribute("email",inputEmail);
-//
-//            return "redirect:/main";
-//        }
-//        //로그인 실패
-//        System.out.println("login fail");
-
+        return "redirect:/";
     }
 
     //로그인 화면 관련

@@ -14,4 +14,5 @@ public class ReviewForm {
 
     @NotEmpty(message = "닉네임을 설정해주세요!")
     private String author;
+
 }

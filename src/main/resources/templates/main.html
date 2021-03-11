@@ -32,8 +32,8 @@
         <!--프로필-->
         <a href="/profile"><img id="profile_image" src="img/profile.png"
                                 width=40px; style="position: absolute; right: 20px; top: 10px; "></a>
-        <div class="subheading" style="font-family: Arial; font-size: 0.8em; color: #A8A8A8; position: absolute;right: 200px;top: 17px; font-weight: bold;">
-            <span th:if="${session.email != null}" th:text="${session.email} + '님'"></span>
+        <div class="subheading" style="font-family: Arial; font-size: 0.9em; color: #A8A8A8; position: absolute;right: 200px;top: 16px; font-weight: bold;">
+            <span th:if="${session.email != null}" th:text="${session.nickname} + '님'"></span>
         </div>
 <!--        로그아웃 -->
         <a th:if="${session.email != null}" href="/kakao/logout">
