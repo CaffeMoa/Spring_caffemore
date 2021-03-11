@@ -76,3 +76,10 @@ Screen Shot
 
 <img src="https://user-images.githubusercontent.com/66946182/110652797-0c208200-8200-11eb-969e-8bdcbab4837e.png">
 
+
+데이터베이스
+---
+
+익명의 리뷰와 회원 다대일 매핑 
+
+<img src="https://user-images.githubusercontent.com/66946182/110807632-96331e00-82c6-11eb-9bdb-e6b82acd562e.png" width = "60%">
