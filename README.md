@@ -76,6 +76,17 @@ Screen Shot
 
 <img src="https://user-images.githubusercontent.com/66946182/110652797-0c208200-8200-11eb-969e-8bdcbab4837e.png">
 
+<img src="https://user-images.githubusercontent.com/66946182/110887798-4be58780-832e-11eb-900b-f0d2c9eb4b53.png">
+
+
+
+프로필 화면
+---
+
+- 로그인을 한 경우 프로필 화면에서 닉네임과 포인트, 작성한 리뷰 확인 가능 
+
+<img src="https://user-images.githubusercontent.com/66946182/110887833-5a33a380-832e-11eb-9838-0d0500511811.png">
+
 
 데이터베이스
 ---
