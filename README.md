@@ -93,4 +93,4 @@ Screen Shot
 
 익명의 리뷰와 회원 다대일 매핑 
 
-<img src="https://user-images.githubusercontent.com/66946182/110807632-96331e00-82c6-11eb-9bdb-e6b82acd562e.png" width = "60%">
+<img src="https://user-images.githubusercontent.com/66946182/110888058-c31b1b80-832e-11eb-8f96-2d98a43c69c3.png" width = "60%">
