@@ -43,7 +43,10 @@ Screen Shot
 회원 가입 화면 
 ---
 
-<img src="https://user-images.githubusercontent.com/66946182/110210371-b339ac80-7ed4-11eb-97cf-d36ea14ddc33.png">
+- 로그인 시 노출될 닉네임 설정 가능 
+
+
+<img src="https://user-images.githubusercontent.com/66946182/110888379-653b0380-832f-11eb-84c5-ff64a88b2dd3.png">
 
 
 카페 지도 
@@ -53,7 +56,6 @@ Screen Shot
 1 ) 기본 창 크기인경우
 
 <img src="https://user-images.githubusercontent.com/66946182/110203625-8f656f00-7eb2-11eb-82d3-8efa47453d83.png">
-
 
 
 2 ) 창 크기를 줄일 경우 
@@ -78,6 +80,12 @@ Screen Shot
 
 <img src="https://user-images.githubusercontent.com/66946182/110887798-4be58780-832e-11eb-900b-f0d2c9eb4b53.png">
 
+리뷰 작성
+---
+
+- 로그인을 한 경우 리뷰 작성 가능. 사용자가 글 작성시 노출될 닉네임을 설정 가능(회원 데이터베이스의 닉네임과는 다름)
+
+<img src="https://user-images.githubusercontent.com/66946182/110888201-12f9e280-832f-11eb-8c54-66b2f0821305.png">
 
 
 프로필 화면
