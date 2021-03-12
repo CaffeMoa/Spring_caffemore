@@ -52,9 +52,31 @@ public class ReviewController {
 
     //리뷰 보여주기
     @GetMapping(value = "/info")
-    public String list(Model model){
+    public String AllReview(Model model){
         List<Reviews> reviewsList = reviewService.findAllReviews();
         model.addAttribute("reviewsList",reviewsList);
         return "info";
+    }
+
+    //작성한 리뷰 보여주기
+    @GetMapping(value = "/profile")
+    public String MemberReview(Model model,HttpServletRequest req){
+
+
+        HttpSession session = req.getSession();
+        if(session.getAttribute("email") != null)
+        {
+            String userEmail = (String) session.getAttribute("email");
+            Member member = memberService.findOneByEmail(userEmail);
+
+            List<Reviews> reviewsList = reviewService.findReviews(member.getId());
+
+            model.addAttribute("reviewsList",reviewsList);
+
+            return "profile";
+        }
+
+        else return "redirect:/login";
+
     }
 }

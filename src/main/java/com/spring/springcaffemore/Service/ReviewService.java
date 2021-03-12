@@ -40,8 +40,8 @@ public class ReviewService {
     }
 
     //회원 아이디로 리뷰들 찾기
-    public List<Reviews> findReviews(String author){
-        return reviewRepository.findById(author);
+    public List<Reviews> findReviews(Long memberIdx){
+        return reviewRepository.findById(memberIdx);
     }
 
     //리뷰 단건 조회

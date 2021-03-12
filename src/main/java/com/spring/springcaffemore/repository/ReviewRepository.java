@@ -31,9 +31,9 @@ public class ReviewRepository {
     }
 
     //회원 아이디로 게시글 찾기
-    public List<Reviews> findById(String author){
-        return em.createQuery("select r from Reviews r where r.author = :author", Reviews.class)
-                .setParameter("author",author)
+    public List<Reviews> findById(Long memberIdx){
+        return em.createQuery("select r from Reviews r where r.member.id = :member_id", Reviews.class)
+                .setParameter("member_id",memberIdx)
                 .getResultList();
     }
 }

@@ -122,8 +122,8 @@
               </tr>
               </thead>
               <tbody>
-              <tr th:each="reviewsList : ${reviewsList}">
-                <td><span th:text="${reviewsList.id}"></span></td>
+              <tr th:each="reviewsList,index : ${reviewsList}">
+                <td><span th:text="${index.index+1}"></span></td>
                 <td><span th:text="${reviewsList.author}"></span></td>
                 <td><span th:text="${reviewsList.content}"></span></td>
                 <td><span th:text="${#temporals.format(reviewsList.reviewDate,'MM-dd HH:mm')}"></span></td>
