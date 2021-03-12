@@ -31,7 +31,7 @@ Screen Shot
 
 2 ) 로그인을 하면 
 
-<img src="https://user-images.githubusercontent.com/66946182/110653622-c57f5780-8200-11eb-837c-602ec5b5e44c.png">
+<img src="https://user-images.githubusercontent.com/66946182/110888482-a16e6400-832f-11eb-80d3-045b02e4b48b.png">
 
 
 로그인 화면 
