@@ -63,6 +63,7 @@ public class MemberController {
                     session.setAttribute("email",inputEmail);
                     session.setAttribute("nickname",member.getNickname());
                     session.setAttribute("point",member.getPoint());
+                    session.setAttribute("kakao",false);//카카오로 로그인 아님
 
                     return "redirect:/";
                 }
