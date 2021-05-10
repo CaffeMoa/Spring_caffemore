@@ -2,14 +2,9 @@
 
 - 스프링 서버용 (카카오맵 api 활용)
 
-서버 작동 후 localhost:8080 입력하면 됨!
+-**실행 영상(누르면 이동합니다)**
 
-push, clone 시 토큰 이용해야 organization repo push, clone 가능함... 
-
-https://velog.io/@ruddms936/github-토큰-생성
-
-위에 거 참고하셈요 
-
+[![video](https://img.youtube.com/vi/mACT4j8VCHY/0.jpg)](https://youtu.be/mACT4j8VCHY?t=0s)
 
 ### 기능
 
